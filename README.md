@@ -1,6 +1,6 @@
-# AI Visual Storytelling Engine
+# Visual Tales Generator
 
-The AI Visual Storytelling Engine is designed to transform narrative text into sequential visual storyboards, offering content creators and storytellers an automated platform for visual narrative generation.
+The Visual Tales Generator is designed to transform narrative text into sequential visual storyboards, offering content creators and storytellers an automated platform for visual narrative generation.
 
 ## Table of Contents
 
@@ -13,7 +13,7 @@ The AI Visual Storytelling Engine is designed to transform narrative text into s
 
 ## Introduction
 
-The AI Visual Storytelling Engine facilitates automated conversion of written narratives into visual storyboards, providing content creators with an AI-powered tool for sequential image generation. The system operates through two main processing stages:
+The Visual Tales Generator facilitates automated conversion of written narratives into visual storyboards, providing content creators with an AI-powered tool for sequential image generation. The system operates through two main processing stages:
 
 ## Story Processing Pipeline
 
