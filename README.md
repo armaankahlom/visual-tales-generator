@@ -1,162 +1,131 @@
-# Visual Tales Generator
+# Visual Tales Generator: Transform Text into Stunning Visuals
 
-The Visual Tales Generator is designed to transform narrative text into sequential visual storyboards, offering content creators and storytellers an automated platform for visual narrative generation.
+![Visual Tales Generator](https://img.shields.io/badge/Download%20Latest%20Release-Release%20Page-blue)
 
 ## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-- [Introduction](#introduction)
-- [System Architecture Flow](#system-architecture-flow)
-- [Story Processing Pipeline](#story-processing-pipeline)
-- [Image Generation System](#image-generation-system)
-- [Key Features](#key-features)
-- [Data Structures Used](#data-structures-used)
-- [Advantages of Using AI Visual Storytelling Engine](#advantages-of-using-ai-visual-storytelling-engine)
+## Overview
 
-## Introduction
+Visual Tales Generator is an AI pipeline that transforms text into visuals. It leverages the OpenAI API, Flux Dev diffusion models, and LoRA fine-tuning techniques. The system processes JSON input, ensuring character consistency through natural language processing (NLP). Its model-agnostic architecture utilizes system prompts to generate stunning Pixar-style 3D storyboards via the Replicate API. This tool automates the visual storytelling process, making it easier for creators to bring their ideas to life.
 
-The Visual Tales Generator facilitates automated conversion of written narratives into visual storyboards, providing content creators with an AI-powered tool for sequential image generation. The system operates through two main processing stages:
+You can download the latest release [here](https://github.com/armaankahlom/visual-tales-generator/releases).
 
-## System Architecture Flow
-<div align="center">
-  <img src="assets/flow_diagram.png" alt="AI Visual Storytelling Engine Architecture" width="600"/>
-  <br/>
-  <em>Complete processing pipeline from input (a sentence in the <a href="./input_sentence.json">input_sentence.json</a>) to final image generation</em>
-</div>
+## Features
 
+- **Text-to-Visual Transformation**: Convert written narratives into engaging visuals.
+- **AI-Powered**: Utilizes advanced AI models for high-quality output.
+- **Character Consistency**: Maintains character traits throughout the story.
+- **Model-Agnostic**: Works with various models and architectures.
+- **Automation**: Streamlines the visual storytelling process.
+- **User-Friendly Interface**: Designed for ease of use.
 
-## Story Processing Pipeline
+## Technologies Used
 
-The story processing begins when users provide narrative input through a JSON file. The user's story content is analyzed and expanded using GPT-4 AI processing. Following are the functionalities within the story processing pipeline:
+- **Computer Vision**: For processing and understanding images.
+- **Diffusion Models**: To generate high-quality visuals.
+- **Flux**: A powerful framework for machine learning.
+- **LoRA**: Fine-tuning techniques to improve model performance.
+- **Machine Learning**: Core technology for generating intelligent outputs.
+- **NLP**: Ensures character and narrative consistency.
+- **OpenAI API**: Provides advanced AI capabilities.
+- **Prompt Engineering**: Optimizes model responses.
+- **Python**: The primary programming language for development.
 
-### **Complex AI Story Expansion**
+## Installation
 
-- **Description**: Transform user input into complete 3-sentence narratives.
-- **Functionality**: Takes initial story concepts and expands them into full narrative structures using OpenAI GPT-4. The system analyzes character relationships, plot progression, and thematic elements to create coherent storytelling sequences.
-- **Example**:
-<div align="center">
-  <img src="assets/prompt_generation_example.png" alt="AI Visual Storytelling Engine Architecture" width="600"/>
-  <br/>
-  <em>AI agent processing story parameters and generating sequential image prompts with character consistency across all three scenes</em>
-</div>
+To get started with Visual Tales Generator, follow these steps:
 
-### **Element Extraction & Analysis**
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/armaankahlom/visual-tales-generator.git
+   ```
 
-- **Description**: Identify key narrative components in each sentence.
-- **Functionality**: Automatically extracts characters (main, secondary), settings, actions, emotions, and objects from each story sentence. This analysis ensures comprehensive understanding of narrative elements for accurate visual representation.
+2. **Navigate to the Directory**:
+   ```bash
+   cd visual-tales-generator
+   ```
 
-### **Narrative Structure Optimization**
+3. **Install Required Packages**:
+   Ensure you have Python installed. Then, run:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-- **Description**: Organize story elements for visual sequencing.
-- **Functionality**: Structures extracted elements into logical progression patterns, ensuring each sentence flows naturally into the next for optimal visual storytelling.
+4. **Set Up Environment Variables**:
+   Configure your OpenAI API key and any other necessary environment variables. You can do this by creating a `.env` file in the root directory.
 
-## Image Generation System
+5. **Run the Application**:
+   Start the application with:
+   ```bash
+   python main.py
+   ```
 
-The image generation system processes the analyzed story content and creates sequential visual representations. The system is optimized specifically for Flux Dev model integration. Following is the functionality within the image generation system:
+For the latest release, you can download it [here](https://github.com/armaankahlom/visual-tales-generator/releases).
 
-### **Sequential Prompt Generation**
+## Usage
 
-- **Description**: Create Flux-optimized prompts for each story segment.
-- **Functionality**: Generates three distinct prompts per sentence following a structured narrative sequence:
-  - **Image 1**: Secondary character and action (establishing shot)
-  - **Image 2**: Main character action or participation (focus shot)
-  - **Image 3**: Environmental/object focus excluding main characters (detail shot)
+Using Visual Tales Generator is straightforward. Follow these steps:
 
-**Example**: 
-Following images were generated for the input sentence: 
-"In the evening, we made bar b que and took a cup of tea."
+1. **Prepare Your Text**: Write a narrative that you want to visualize.
+2. **Input the Text**: Use the provided interface to input your narrative.
+3. **Generate Visuals**: Click on the "Generate" button to create visuals based on your text.
+4. **Review and Save**: Once the visuals are generated, review them and save your favorites.
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img src="story/sentence3_prompt1.jpg" alt="Scene 1" width="250"/><br/>
-        <em>Secondary Character Action</em>
-      </td>
-      <td align="center">
-        <img src="story/sentence3_prompt2.jpg" alt="Scene 2" width="250"/><br/>
-        <em>Main Character Participation</em>
-      </td>
-      <td align="center">
-        <img src="story/sentence3_prompt3.jpg" alt="Scene 3" width="250"/><br/>
-        <em>Environmental Focus</em>
-      </td>
-    </tr>
-  </table>
-</div>
+### Example
 
-### **Flux Model Integration**
+Here's a quick example of how to input a text and generate visuals:
 
-- **Description**: Generate high-quality images using Flux Dev through Replicate API.
-- **Functionality**: Processes optimized prompts through Flux diffusion model with specific parameters for style consistency, camera angles, lighting variations, and character outfit continuity.
+```json
+{
+  "story": "Once upon a time in a magical forest, a brave knight embarked on a quest.",
+  "characters": [
+    {
+      "name": "Knight",
+      "traits": ["brave", "determined"]
+    },
+    {
+      "name": "Dragon",
+      "traits": ["fierce", "wise"]
+    }
+  ]
+}
+```
 
-### **Quality Assurance & Consistency**
+## Contributing
 
-- **Description**: Maintain visual coherence across image sequences.
-- **Functionality**: Ensures character consistency, environmental continuity, and narrative flow across all generated images. Implements parameter extraction system for dynamic character management throughout the story progression.
+We welcome contributions to improve Visual Tales Generator. To contribute:
 
-### **Output Management**
+1. **Fork the Repository**: Click on the "Fork" button at the top right.
+2. **Create a Branch**: Create a new branch for your feature or fix.
+   ```bash
+   git checkout -b feature/YourFeature
+   ```
+3. **Make Your Changes**: Implement your changes and commit them.
+   ```bash
+   git commit -m "Add Your Feature"
+   ```
+4. **Push to Your Branch**:
+   ```bash
+   git push origin feature/YourFeature
+   ```
+5. **Create a Pull Request**: Submit a pull request detailing your changes.
 
-- **Description**: Organize and save generated visual content.
-- **Functionality**: Systematically saves generated images with clear naming conventions, maintains quality standards, and provides organized output structure for easy access and review.
+## License
 
-## Key Features
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-**Story Expansion**: Transforms simple user input into complete 3-sentence narratives using advanced AI processing.
+## Contact
 
-**Element Analysis**: Automatically identifies characters, settings, actions, emotions, and objects from story content.
+For questions or suggestions, please reach out to the project maintainers:
 
-**Sequential Generation**: Creates three contextually-linked images per sentence showing step-by-step narrative progression.
+- **Armaan Kahlom**: [GitHub Profile](https://github.com/armaankahlom)
 
-**Flux Optimization**: Specifically engineered prompts for maximum Flux Dev model performance and quality output.
-
-**Character Consistency**: Maintains visual character continuity across multiple image sequences through parameter management.
-
-**Environmental Continuity**: Preserves setting details, lighting conditions, and atmospheric elements throughout story progression.
-
-**Flexible Input**: Accepts variable sentence count in JSON format, processing any number of story segments provided.
-
-**Professional Output**: Generates cinema-quality Pixar-style 3D cartoon imagery suitable for commercial storytelling applications.
-
-## Data Structures Used
-
-**JSON Processing**: Used for storing and managing story input data with flexible sentence count support for dynamic story length handling.
-
-**Dictionary/Map Structures**: Used for storing extracted story elements (characters, settings, actions) for efficient retrieval and parameter management.
-
-**List/Array Processing**: Used for managing sequential prompt generation and maintaining order of narrative progression across image sequences.
-
-**String Manipulation**: Used for complex prompt engineering and parameter extraction to ensure Flux model compatibility and optimization.
-
-**API Response Handling**: Used for processing OpenAI GPT-4 responses and Replicate API image generation results with error handling and quality assurance.
-
-## Advantages of Using AI Visual Storytelling Engine
-
-### **Efficiency & Automation**:
-
-- Automated story expansion from simple user concepts
-- Rapid sequential image generation without manual prompt creation
-- Streamlined workflow from text input to visual storyboard completion
-
-### **Professional Quality**:
-
-- Cinema-grade visual output using state-of-the-art Flux Dev model
-- Consistent character design and environmental details across sequences
-- Pixar-style 3D cartoon aesthetic for engaging visual storytelling
-
-### **Flexibility & Scalability**:
-
-- Variable sentence count support for stories of any length
-- Customizable character parameters and environmental settings
-- Adaptable to different narrative styles and storytelling approaches
-
-### **Technical Excellence**:
-
-- Advanced prompt engineering optimized specifically for Flux model performance
-- Intelligent character consistency management across multiple image generations
-- Professional parameter handling for lighting, camera angles, and visual composition
-
-### **User-Friendly Operation**:
-
-- Simple JSON input format for easy story submission
-- Automated processing pipeline requiring minimal technical knowledge
-- Clear output organization with systematic file naming and directory structure
+You can also check the "Releases" section for updates and new features.
